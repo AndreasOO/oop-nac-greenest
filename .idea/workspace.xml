@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a630e4-62b9-4333-989a-c9a792ad5554" name="Changes" comment="Set up testfolder and generated test for PalmTree, did not implement actual tests." />
+    <list default="true" id="60a630e4-62b9-4333-989a-c9a792ad5554" name="Changes" comment="Merged package reordering branch">
+      <change afterPath="$PROJECT_DIR$/test/CactusTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/CarnivoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Cactus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Carnivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Carnivore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/PalmTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/PalmTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/PlantFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/PlantFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PalmTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PalmTreeTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +51,8 @@
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.PalmTreeTest.executor": "Run",
+    "JUnit.PalmTreeTest.getNutrientType.executor": "Debug",
+    "JUnit.PalmTreeTest.getPlantName.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -66,16 +79,21 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Greenest.Watering.Main" />
+  <component name="RunManager" selected="JUnit.PalmTreeTest">
+    <configuration name="CactusTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Greenest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Greenest.Watering.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CactusTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarnivoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Greenest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CarnivoreTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,10 +107,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PalmTreeTest.getNutrientType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Greenest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PalmTreeTest" />
+      <option name="METHOD_NAME" value="getNutrientType" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PalmTreeTest.getPlantName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Greenest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PalmTreeTest" />
+      <option name="METHOD_NAME" value="getPlantName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PalmTreeTest" />
+        <item itemvalue="JUnit.CactusTest" />
+        <item itemvalue="JUnit.CarnivoreTest" />
+        <item itemvalue="JUnit.PalmTreeTest.getPlantName" />
+        <item itemvalue="JUnit.PalmTreeTest.getNutrientType" />
       </list>
     </recent_temporary>
   </component>
@@ -123,14 +164,46 @@
       <option name="project" value="LOCAL" />
       <updated>1727378205518</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merged package reordering branch">
+      <option name="closed" value="true" />
+      <created>1727419317531</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727419317531</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="tdd-setup" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Set up testfolder and generated test for PalmTree, did not implement actual tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up testfolder and generated test for PalmTree, did not implement actual tests." />
+    <MESSAGE value="Merged package reordering branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged package reordering branch" />
   </component>
 </project>

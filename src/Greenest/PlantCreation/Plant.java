@@ -2,11 +2,11 @@ package Greenest.PlantCreation;
 
 public abstract class Plant {
     private String name;
-    private double height;
+    private double heightInMeter;
 
 
-    protected Plant(String name, double height) {
+    protected Plant(String name, double heightInMeter) {
         this.name = name;
-        this.height = height;
+        this.heightInMeter = heightInMeter;
     }
 }

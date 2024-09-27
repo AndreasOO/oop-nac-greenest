@@ -7,15 +7,15 @@ package Greenest.PlantCreation;
  * the factory class to get instances.
  */
 public class PlantFactory {
-    public static PalmTree getPalmTree(String name, double height) {
-        return new PalmTree(name,height);
+    public static PalmTree getPalmTree(String name, double heightInMeter) {
+        return new PalmTree(name,heightInMeter);
     }
 
-    public static Carnivore getCarnivore(String name, double height) {
-        return new Carnivore(name,height);
+    public static Carnivore getCarnivore(String name, double heightInMeter) {
+        return new Carnivore(name,heightInMeter);
     }
 
-    public static Cactus getCactus(String name, double height) {
-        return new Cactus(name,height);
+    public static Cactus getCactus(String name, double heightInMeter) {
+        return new Cactus(name,heightInMeter);
     }
 }

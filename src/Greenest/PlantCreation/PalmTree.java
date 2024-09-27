@@ -4,8 +4,8 @@ public class PalmTree extends Plant implements Nurtured {
     private NutritionType nutritionType;
     private PlantType plantType;
 
-    protected PalmTree(String name, double height) {
-        super(name, height);
+    protected PalmTree(String name, double heightInMeter) {
+        super(name, heightInMeter);
 
     }
 
