@@ -16,6 +16,11 @@ class PalmTreeTest {
     }
 
     @Test
+    void getPlantType() {
+        assertTrue(palmTree.getPlantType().type.equals("Palm Tree"));
+    }
+
+    @Test
     void calculateDailyNutritionInLiter() {
         assertTrue(palmTree.calculateDailyNutritionInLiter() == 1.5);
     }

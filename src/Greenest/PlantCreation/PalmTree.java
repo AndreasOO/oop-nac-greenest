@@ -18,8 +18,12 @@ public class PalmTree extends Plant implements Nurtured {
         return nutritionType.nutrient;
     }
 
+    public PlantType getPlantType() {
+        return plantType;
+    }
+
     @Override
     public double calculateDailyNutritionInLiter() {
-        return NUTRITION_COEFFICIENT*super.getHeightInMeter();
+        return NUTRITION_COEFFICIENT*this.getHeightInMeter();
     }
 }

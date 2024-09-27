@@ -17,6 +17,11 @@ class CarnivoreTest {
     }
 
     @Test
+    void getPlantType() {
+        assertTrue(carnivore.getPlantType().type.equals("Carnivore"));
+    }
+
+    @Test
     void calculateDailyNutritionInLiter() {
         assertTrue(carnivore.calculateDailyNutritionInLiter() == 0.2);
     }
