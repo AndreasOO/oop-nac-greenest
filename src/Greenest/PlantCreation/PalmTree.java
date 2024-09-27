@@ -1,6 +1,6 @@
 package Greenest.PlantCreation;
 
-public class PalmTree extends Plant implements Nurtured {
+public class PalmTree extends Plant implements Nurtured, TableFormatable {
     private static final double NUTRITION_COEFFICIENT = 0.5;
 
     private NutritionType nutritionType;
@@ -18,12 +18,21 @@ public class PalmTree extends Plant implements Nurtured {
         return nutritionType.nutrient;
     }
 
-    public PlantType getPlantType() {
-        return plantType;
+    public String getPlantType() {
+        return plantType.type;
     }
 
     @Override
     public double calculateDailyNutritionInLiter() {
         return NUTRITION_COEFFICIENT*this.getHeightInMeter();
+    }
+
+    @Override
+    public String[] toTableArray() {
+        return new String[]{
+                this.getName(),
+                this.getPlantType(),
+                String.valueOf(this.getHeightInMeter()),
+                this.getNutrientType()};
     }
 }
