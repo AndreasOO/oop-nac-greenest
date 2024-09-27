@@ -3,8 +3,9 @@ package Greenest.PlantCreation;
 public class Cactus extends Plant implements Nurtured, TableFormatable {
     private static final double DAILY_NUTRITIONAL_VALUE_IN_LITER = 0.02;
 
-    private NutritionType nutritionType;
-    private PlantType plantType;
+    private final NutritionType nutritionType;
+    private final PlantType plantType;
+    private double dailyNutritionInLiter;
 
     protected Cactus(String name, double heightInMeter) {
         super(name, heightInMeter);
@@ -25,6 +26,15 @@ public class Cactus extends Plant implements Nurtured, TableFormatable {
     @Override
     public double calculateDailyNutritionInLiter() {
         return DAILY_NUTRITIONAL_VALUE_IN_LITER;
+    }
+
+    @Override
+    public String createNutritionInstructions() {
+        return String.format(String.format("%s %s should get %.2f liter of %s per day",
+                this.getPlantType(),
+                this.getName(),
+                this.calculateDailyNutritionInLiter(),
+                this.getNutrientType()));
     }
 
     @Override

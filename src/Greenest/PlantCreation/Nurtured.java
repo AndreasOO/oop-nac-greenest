@@ -1,6 +1,7 @@
 package Greenest.PlantCreation;
 
 public interface Nurtured {
-    String getNutrientType();
     double calculateDailyNutritionInLiter();
+    public String getNutrientType();
+    String createNutritionInstructions();
 }

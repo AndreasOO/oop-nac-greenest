@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Owner owner = new Owner();
+
 
         Cactus igge = PlantFactory.getCactus("Igge", 0.20);
         PalmTree laura = PlantFactory.getPalmTree("Laura", 5);
@@ -20,9 +20,20 @@ public class Main {
         plantsToAddToTable.add(meatloaf);
         plantsToAddToTable.add(olof);
 
+        List<Nurtured> plantsToGetNutrients = new ArrayList<>();
+        plantsToGetNutrients.add(igge);
+        plantsToGetNutrients.add(laura);
+        plantsToGetNutrients.add(meatloaf);
+        plantsToGetNutrients.add(olof);
 
-        owner.setPlantLoad(plantsToAddToTable);
+        List<Plant> plants = new ArrayList<>();
+        plants.add(igge);
+        plants.add(laura);
+        plants.add(meatloaf);
+        plants.add(olof);
 
+        Owner owner = new Owner();
+        owner.setPlantsToLoadToTable(plantsToAddToTable);
         owner.runProgram();
 
 

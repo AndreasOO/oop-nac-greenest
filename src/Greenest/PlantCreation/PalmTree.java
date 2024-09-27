@@ -28,6 +28,15 @@ public class PalmTree extends Plant implements Nurtured, TableFormatable {
     }
 
     @Override
+    public String createNutritionInstructions() {
+        return String.format(String.format("%s %s should get %.2f liter of %s per day",
+                this.getPlantType(),
+                this.getName(),
+                this.calculateDailyNutritionInLiter(),
+                this.getNutrientType()));
+    }
+
+    @Override
     public String[] toTableArray() {
         return new String[]{
                 this.getName(),
