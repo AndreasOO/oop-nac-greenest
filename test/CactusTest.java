@@ -20,6 +20,11 @@ class CactusTest {
     }
 
     @Test
+    void getPlantType() {
+        assertTrue(cactus1.getPlantType().type.equals("Cactus"));
+    }
+
+    @Test
     void calculateDailyNutritionInLiter() {
         assertTrue(cactus1.calculateDailyNutritionInLiter() == 0.02);
         assertTrue(cactus2.calculateDailyNutritionInLiter() == 0.02);

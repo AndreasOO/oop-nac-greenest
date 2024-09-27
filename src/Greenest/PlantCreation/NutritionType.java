@@ -1,7 +1,7 @@
 package Greenest.PlantCreation;
 
 public enum NutritionType {
-    WATER("Water"),
+    TAP_WATER("Tap Water"),
     MINERAL_WATER("Mineral Water"),
     PROTEIN_DRINK("Protein Drink");
 
