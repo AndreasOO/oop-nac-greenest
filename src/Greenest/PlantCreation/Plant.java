@@ -9,4 +9,12 @@ public abstract class Plant {
         this.name = name;
         this.heightInMeter = heightInMeter;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getHeightInMeter() {
+        return heightInMeter;
+    }
 }
