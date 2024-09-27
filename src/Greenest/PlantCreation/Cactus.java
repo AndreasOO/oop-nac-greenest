@@ -1,9 +1,11 @@
-public class Carnivore extends Plant implements Nurtured {
+package Greenest.PlantCreation;
+
+public class Cactus extends Plant implements Nurtured {
     private NutritionType nutritionType;
     private PlantType plantType;
 
-    protected Carnivore(String name, double height) {
-        super(name, height);
+    protected Cactus(String name, double heightInMeter) {
+        super(name, heightInMeter);
     }
 
     @Override
