@@ -1,3 +1,5 @@
+package Greenest.PlantCreation;
+
 public class PalmTree extends Plant implements Nurtured {
     private NutritionType nutritionType;
     private PlantType plantType;

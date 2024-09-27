@@ -1,3 +1,5 @@
+package Greenest.PlantCreation;
+
 public class Cactus extends Plant implements Nurtured {
     private NutritionType nutritionType;
     private PlantType plantType;

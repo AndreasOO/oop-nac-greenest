@@ -1,4 +1,5 @@
-import static org.junit.jupiter.api.Assertions.*;
+import Greenest.PlantCreation.PalmTree;
+import Greenest.PlantCreation.PlantFactory;
 import org.junit.jupiter.api.Test;
 
 class PalmTreeTest {

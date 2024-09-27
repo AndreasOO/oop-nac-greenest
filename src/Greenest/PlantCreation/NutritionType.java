@@ -1,3 +1,5 @@
+package Greenest.PlantCreation;
+
 public enum NutritionType {
     WATER("Water"),
     MINERAL_WATER("Mineral Water"),

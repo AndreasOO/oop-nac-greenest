@@ -1,3 +1,5 @@
+package Greenest.PlantCreation;
+
 public enum PlantType {
     PALM_TREE("Palm Tree"),
     CARNIVORE("Carnivore"),
