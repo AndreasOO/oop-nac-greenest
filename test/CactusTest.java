@@ -1,6 +1,7 @@
 import Greenest.PlantCreation.Cactus;
 import Greenest.PlantCreation.PalmTree;
 import Greenest.PlantCreation.PlantFactory;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertTrue;
 
@@ -16,18 +17,18 @@ class CactusTest {
 
     @Test
     void getNutrientType() {
-        assertTrue(cactus1.getNutrientType().equals("Mineral Water"));
+        Assertions.assertEquals("Mineral Water", cactus1.getNutrientType());
     }
 
     @Test
     void getPlantType() {
-        assertTrue(cactus1.getPlantType().equals("Cactus"));
+        Assertions.assertEquals("Cactus", cactus1.getPlantType());
     }
 
     @Test
     void calculateDailyNutritionInLiter() {
-        assertTrue(cactus1.calculateDailyNutritionInLiter() == 0.02);
-        assertTrue(cactus2.calculateDailyNutritionInLiter() == 0.02);
-        assertTrue(cactus3.calculateDailyNutritionInLiter() == 0.02);
+        Assertions.assertEquals(0.02, cactus1.calculateDailyNutritionInLiter());
+        Assertions.assertEquals(0.02, cactus2.calculateDailyNutritionInLiter());
+        Assertions.assertEquals(0.02, cactus3.calculateDailyNutritionInLiter());
     }
 }

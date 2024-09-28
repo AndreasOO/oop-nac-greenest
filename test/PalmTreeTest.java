@@ -1,6 +1,8 @@
 import Greenest.PlantCreation.PalmTree;
 import Greenest.PlantCreation.PlantFactory;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.Assert.assertTrue;
 
 //TODO: Add corner case test and high/low numbers.
@@ -12,16 +14,16 @@ class PalmTreeTest {
 
     @Test
     void getNutrientType() {
-        assertTrue(palmTree.getNutrientType().equals("Tap Water"));
+        Assertions.assertEquals("Tap Water", palmTree.getNutrientType());
     }
 
     @Test
     void getPlantType() {
-        assertTrue(palmTree.getPlantType().equals("Palm Tree"));
+        Assertions.assertEquals("Palm Tree", palmTree.getPlantType());
     }
 
     @Test
     void calculateDailyNutritionInLiter() {
-        assertTrue(palmTree.calculateDailyNutritionInLiter() == 1.5);
+        Assertions.assertEquals(1.5, palmTree.calculateDailyNutritionInLiter());
     }
 }

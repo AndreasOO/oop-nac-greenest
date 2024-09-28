@@ -1,9 +1,9 @@
 package Greenest.Watering;
 
-import javax.swing.*;
 import Greenest.PlantCreation.*;
 import Greenest.GUI.*;
 
+import javax.swing.*;
 import java.io.EOFException;
 import java.lang.instrument.IllegalClassFormatException;
 import java.util.List;
@@ -12,8 +12,8 @@ public class Owner {
     private final GUIObject GUI;
     private List<Plant> plantsInGarden;
     private String inputPlantNameFromUser;
-    private String plantWateringInstructions;
-    private Plant plantToWater;
+    private String plantNutritionInstructions;
+    private Plant plantToNutriate;
 
 
     public Owner() {
@@ -29,10 +29,11 @@ public class Owner {
     private void setUpTable() {
         try {
             addPlantsInGardenToTable();
-        } catch (IllegalClassFormatException e) {
-            handleIllegalClassFormatException(e);
+        } catch (NullPointerException | IllegalClassFormatException e) {
+            handleIncorrectSetup(e);
         }
     }
+
 
     private void addEventListeners() {
         GUI.getOpenDialogButton().addActionListener(e -> {
@@ -46,7 +47,7 @@ public class Owner {
         try {
             getInputFromUser();
             validateInputFromUser();
-            findPlant();
+            findPlantToNutriate();
             createOutputToUser();
         } catch (EOFException e) {
             return;
@@ -54,7 +55,7 @@ public class Owner {
             handleIllegalArgumentException(e);
             return;
         } catch (IllegalClassFormatException e) {
-            handleIllegalClassFormatException(e);
+            handleIncorrectSetup(e);
         }
         showOutputToUser();
     }
@@ -83,26 +84,26 @@ public class Owner {
         }
     }
 
-    private void findPlant() throws IllegalArgumentException {
+    private void findPlantToNutriate() throws IllegalArgumentException {
         for (Plant plant : plantsInGarden) {
             if (plant.getName().equalsIgnoreCase(inputPlantNameFromUser)) {
-                plantToWater = plant;
+                plantToNutriate = plant;
                 return;
             }
         }
         throw new IllegalArgumentException("Plant name does not match any registered plants");
     }
 
-    private void createOutputToUser() throws IllegalClassFormatException{
-        if (plantToWater instanceof Nurtured nurtured) {
-            plantWateringInstructions = nurtured.createNutritionInstructions();
+    private void createOutputToUser() throws IllegalClassFormatException {
+        if (plantToNutriate instanceof Nurtured nurtured) {
+            plantNutritionInstructions = nurtured.createNutritionInstructions();
         } else {
             throw new IllegalClassFormatException("Plant cannot create nutrition instructions");
         }
     }
 
     private void showOutputToUser() {
-        JOptionPane.showMessageDialog(GUI.getFrame(), plantWateringInstructions);
+        JOptionPane.showMessageDialog(GUI.getFrame(), plantNutritionInstructions);
     }
 
 
@@ -110,7 +111,11 @@ public class Owner {
         this.plantsInGarden = plantsInGarden;
     }
 
+
     private void addPlantsInGardenToTable() throws IllegalClassFormatException {
+        if (plantsInGarden == null) {
+            throw new NullPointerException("There are no plants to add to table");
+        }
         for (Plant plant : plantsInGarden) {
             if (plant instanceof TableFormatable plantToTable) {
                 GUI.getTableModel().addRow(plantToTable.toTableArray());
@@ -121,7 +126,7 @@ public class Owner {
         }
     }
 
-    private void handleIllegalClassFormatException(IllegalClassFormatException e) {
+    private void handleIncorrectSetup(Exception e) {
         System.out.println(e.getMessage());
         e.printStackTrace();
         JOptionPane.showMessageDialog(GUI.getFrame(), "Error - Unexpected error, closing application",

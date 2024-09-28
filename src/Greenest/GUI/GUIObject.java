@@ -6,7 +6,7 @@ import java.awt.*;
 
 
 public class GUIObject {
-    private final String[] COLUMN_NAMES = {"Plant Name", "Plant Type", "Height in meters", "Nutrition"};
+    private final String[] COLUMN_NAMES = {"Plant Name", "Plant Type", "Height in meters", "Nutrition Type"};
     private final JFrame FRAME;
     private final JPanel PANEL;
 

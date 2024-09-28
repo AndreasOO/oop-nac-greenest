@@ -5,7 +5,6 @@ public class Cactus extends Plant implements Nurtured, TableFormatable {
 
     private final NutritionType nutritionType;
     private final PlantType plantType;
-    private double dailyNutritionInLiter;
 
     protected Cactus(String name, double heightInMeter) {
         super(name, heightInMeter);
@@ -13,15 +12,15 @@ public class Cactus extends Plant implements Nurtured, TableFormatable {
         this.nutritionType = NutritionType.MINERAL_WATER;
     }
 
+    public String getPlantType() {
+        return plantType.type;
+    }
+
     @Override
     public String getNutrientType() {
         return nutritionType.nutrient;
     }
 
-
-    public String getPlantType() {
-        return plantType.type;
-    }
 
     @Override
     public double calculateDailyNutritionInLiter() {
