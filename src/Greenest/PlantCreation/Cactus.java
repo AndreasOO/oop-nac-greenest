@@ -2,20 +2,20 @@ package Greenest.PlantCreation;
 
 public class Cactus extends Plant implements Nurtured, TableFormatable {
     private static final double DAILY_NUTRITIONAL_VALUE_IN_LITER = 0.02;
-    private static final PlantType plantType =  PlantType.CACTUS;
-    private static final NutritionType nutritionType = NutritionType.MINERAL_WATER;
+    private static final PlantType PLANT_TYPE =  PlantType.CACTUS;
+    private static final NutritionType NUTRITION_TYPE = NutritionType.MINERAL_WATER;
 
     protected Cactus(String name, double heightInMeter) {
         super(name, heightInMeter);
     }
 
     public String getPlantType() {
-        return plantType.type;
+        return PLANT_TYPE.type;
     }
 
     @Override
     public String getNutrientType() {
-        return nutritionType.nutrient;
+        return NUTRITION_TYPE.nutrient;
     }
 
 
