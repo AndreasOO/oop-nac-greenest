@@ -1,4 +1,4 @@
-package Greenest.Watering;
+package Greenest.Hotel;
 
 import Greenest.PlantCreation.*;
 import Greenest.GUI.*;
@@ -8,15 +8,15 @@ import java.io.EOFException;
 import java.lang.instrument.IllegalClassFormatException;
 import java.util.List;
 
-public class Owner {
+public class HotelOwner {
     private final GUIObject GUI;
-    private List<Plant> plantsInGarden;
+    private List<Plant> plantsInHotel;
     private String inputPlantNameFromUser;
     private String plantNutritionInstructions;
     private Plant plantToNutriate;
 
 
-    public Owner() {
+    public HotelOwner() {
         this.GUI = new GUIObject();
     }
 
@@ -28,12 +28,25 @@ public class Owner {
 
     private void setUpTable() {
         try {
-            addPlantsInGardenToTable();
+            addPlantsInHotelToTable();
         } catch (NullPointerException | IllegalClassFormatException e) {
             handleIncorrectSetup(e);
         }
     }
 
+    private void addPlantsInHotelToTable() throws NullPointerException,IllegalClassFormatException {
+        if (plantsInHotel == null) {
+            throw new NullPointerException("There are no plants to add to table");
+        }
+        for (Plant plant : plantsInHotel) {
+            if (plant instanceof TableFormatable plantToTable) {
+                GUI.getTableModel().addRow(plantToTable.toTableArray());
+            }
+            else {
+                throw new IllegalClassFormatException("Plant cannot be formatted to table");
+            }
+        }
+    }
 
     private void addEventListeners() {
         GUI.getOpenDialogButton().addActionListener(e -> {
@@ -84,8 +97,10 @@ public class Owner {
         }
     }
 
+    // Example of polymorphism. All objects in plantsInHotel are extended classes from abstract Plant
+    // Because the generic type of the List is Plant each specific class can use the getName() method from the parent class.
     private void findPlantToNutriate() throws IllegalArgumentException {
-        for (Plant plant : plantsInGarden) {
+        for (Plant plant : plantsInHotel) {
             if (plant.getName().equalsIgnoreCase(inputPlantNameFromUser)) {
                 plantToNutriate = plant;
                 return;
@@ -107,23 +122,8 @@ public class Owner {
     }
 
 
-    public void setPlantsInGarden(List<Plant> plantsInGarden) {
-        this.plantsInGarden = plantsInGarden;
-    }
-
-
-    private void addPlantsInGardenToTable() throws IllegalClassFormatException {
-        if (plantsInGarden == null) {
-            throw new NullPointerException("There are no plants to add to table");
-        }
-        for (Plant plant : plantsInGarden) {
-            if (plant instanceof TableFormatable plantToTable) {
-                GUI.getTableModel().addRow(plantToTable.toTableArray());
-            }
-            else {
-                throw new IllegalClassFormatException("Plant cannot be formatted to table");
-            }
-        }
+    public void checkInPlantsToHotel(List<Plant> plantsToCheckInToHotel) {
+        this.plantsInHotel = plantsToCheckInToHotel;
     }
 
     private void handleIncorrectSetup(Exception e) {
