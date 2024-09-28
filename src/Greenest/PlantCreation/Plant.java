@@ -1,8 +1,8 @@
 package Greenest.PlantCreation;
 
 public abstract class Plant {
-    private String name;
-    private double heightInMeter;
+    private final String name;
+    private final double heightInMeter;
 
 
     protected Plant(String name, double heightInMeter) {
@@ -17,4 +17,5 @@ public abstract class Plant {
     public double getHeightInMeter() {
         return heightInMeter;
     }
+
 }

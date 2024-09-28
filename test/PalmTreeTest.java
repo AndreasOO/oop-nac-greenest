@@ -17,7 +17,7 @@ class PalmTreeTest {
 
     @Test
     void getPlantType() {
-        assertTrue(palmTree.getPlantType().type.equals("Palm Tree"));
+        assertTrue(palmTree.getPlantType().equals("Palm Tree"));
     }
 
     @Test

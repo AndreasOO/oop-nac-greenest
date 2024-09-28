@@ -18,7 +18,7 @@ class CarnivoreTest {
 
     @Test
     void getPlantType() {
-        assertTrue(carnivore.getPlantType().type.equals("Carnivore"));
+        assertTrue(carnivore.getPlantType().equals("Carnivore"));
     }
 
     @Test
