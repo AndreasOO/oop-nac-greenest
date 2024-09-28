@@ -1,4 +1,4 @@
-package Greenest.Watering;
+package Greenest.Hotel;
 
 import Greenest.PlantCreation.*;
 
@@ -15,14 +15,14 @@ public class Main {
         PalmTree olof = PlantFactory.getPalmTree("Olof", 1);
 
 
-        List<Plant> plantsInGarden = new ArrayList<>();
-        plantsInGarden.add(igge);
-        plantsInGarden.add(laura);
-        plantsInGarden.add(meatloaf);
-        plantsInGarden.add(olof);
+        List<Plant> plantsToCheckInToHotel = new ArrayList<>();
+        plantsToCheckInToHotel.add(igge);
+        plantsToCheckInToHotel.add(laura);
+        plantsToCheckInToHotel.add(meatloaf);
+        plantsToCheckInToHotel.add(olof);
 
-        Owner owner = new Owner();
-        owner.setPlantsInGarden(plantsInGarden);
+        HotelOwner owner = new HotelOwner();
+        owner.checkInPlantsToHotel(plantsToCheckInToHotel);
         owner.runProgram();
 
 

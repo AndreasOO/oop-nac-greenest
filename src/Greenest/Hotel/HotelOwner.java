@@ -1,4 +1,4 @@
-package Greenest.Watering;
+package Greenest.Hotel;
 
 import Greenest.PlantCreation.*;
 import Greenest.GUI.*;
@@ -8,15 +8,15 @@ import java.io.EOFException;
 import java.lang.instrument.IllegalClassFormatException;
 import java.util.List;
 
-public class Owner {
+public class HotelOwner {
     private final GUIObject GUI;
-    private List<Plant> plantsInGarden;
+    private List<Plant> plantsInHotel;
     private String inputPlantNameFromUser;
     private String plantNutritionInstructions;
     private Plant plantToNutriate;
 
 
-    public Owner() {
+    public HotelOwner() {
         this.GUI = new GUIObject();
     }
 
@@ -28,7 +28,7 @@ public class Owner {
 
     private void setUpTable() {
         try {
-            addPlantsInGardenToTable();
+            addPlantsInHotelToTable();
         } catch (NullPointerException | IllegalClassFormatException e) {
             handleIncorrectSetup(e);
         }
@@ -85,7 +85,7 @@ public class Owner {
     }
 
     private void findPlantToNutriate() throws IllegalArgumentException {
-        for (Plant plant : plantsInGarden) {
+        for (Plant plant : plantsInHotel) {
             if (plant.getName().equalsIgnoreCase(inputPlantNameFromUser)) {
                 plantToNutriate = plant;
                 return;
@@ -107,16 +107,16 @@ public class Owner {
     }
 
 
-    public void setPlantsInGarden(List<Plant> plantsInGarden) {
-        this.plantsInGarden = plantsInGarden;
+    public void checkInPlantsToHotel(List<Plant> plantsToCheckInToHotel) {
+        this.plantsInHotel = plantsToCheckInToHotel;
     }
 
 
-    private void addPlantsInGardenToTable() throws IllegalClassFormatException {
-        if (plantsInGarden == null) {
+    private void addPlantsInHotelToTable() throws IllegalClassFormatException {
+        if (plantsInHotel == null) {
             throw new NullPointerException("There are no plants to add to table");
         }
-        for (Plant plant : plantsInGarden) {
+        for (Plant plant : plantsInHotel) {
             if (plant instanceof TableFormatable plantToTable) {
                 GUI.getTableModel().addRow(plantToTable.toTableArray());
             }
