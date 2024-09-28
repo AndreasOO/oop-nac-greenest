@@ -1,7 +1,7 @@
 import Greenest.PlantCreation.Cactus;
 import Greenest.PlantCreation.PalmTree;
 import Greenest.PlantCreation.PlantFactory;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertTrue;
 
@@ -10,25 +10,32 @@ import static org.junit.Assert.assertTrue;
 //TODO: Add BDD flow
 class CactusTest {
 
-    Cactus cactus1 = PlantFactory.getCactus("plant name", 5);
-    Cactus cactus2 = PlantFactory.getCactus("plant name", 25);
-    Cactus cactus3 = PlantFactory.getCactus("plant name", 6);
+    Cactus cactus1 = PlantFactory.getCactus("Igge", 5);
+    Cactus cactus2 = PlantFactory.getCactus("Sam", 25);
+    Cactus cactus3 = PlantFactory.getCactus("Ford", 6);
 
 
     @Test
-    void getNutrientType() {
-        Assertions.assertEquals("Mineral Water", cactus1.getNutrientType());
+    void testNutrientType() {
+        assertEquals("Mineral Water", cactus1.getNutrientType());
     }
 
     @Test
-    void getPlantType() {
-        Assertions.assertEquals("Cactus", cactus1.getPlantType());
+    void testPlantType() {
+        assertEquals("Cactus", cactus1.getPlantType());
     }
 
     @Test
-    void calculateDailyNutritionInLiter() {
-        Assertions.assertEquals(0.02, cactus1.calculateDailyNutritionInLiter());
-        Assertions.assertEquals(0.02, cactus2.calculateDailyNutritionInLiter());
-        Assertions.assertEquals(0.02, cactus3.calculateDailyNutritionInLiter());
+    void testCalculateDailyNutritionInLiter() {
+        assertEquals(0.02, cactus1.calculateDailyNutritionInLiter());
+        assertEquals(0.02, cactus2.calculateDailyNutritionInLiter());
+        assertEquals(0.02, cactus3.calculateDailyNutritionInLiter());
+    }
+
+    @Test
+    void testNutritionInstructions() {
+        assertEquals("Cactus Igge should get 0.02 liter of Mineral Water per day", cactus1.createNutritionInstructions());
+        assertEquals("Cactus Sam should get 0.02 liter of Mineral Water per day", cactus2.createNutritionInstructions());
+        assertEquals("Cactus Ford should get 0.02 liter of Mineral Water per day", cactus3.createNutritionInstructions());
     }
 }

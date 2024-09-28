@@ -1,6 +1,6 @@
 import Greenest.PlantCreation.PalmTree;
 import Greenest.PlantCreation.PlantFactory;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -9,21 +9,27 @@ import static org.junit.Assert.assertTrue;
 //TODO: Add BDD flow
 class PalmTreeTest {
 
-    PalmTree palmTree = PlantFactory.getPalmTree("plant name", 3);
+    PalmTree palmTree = PlantFactory.getPalmTree("Olof", 3);
 
 
     @Test
     void getNutrientType() {
-        Assertions.assertEquals("Tap Water", palmTree.getNutrientType());
+        assertEquals("Tap Water", palmTree.getNutrientType());
     }
 
     @Test
     void getPlantType() {
-        Assertions.assertEquals("Palm Tree", palmTree.getPlantType());
+        assertEquals("Palm Tree", palmTree.getPlantType());
     }
 
     @Test
     void calculateDailyNutritionInLiter() {
-        Assertions.assertEquals(1.5, palmTree.calculateDailyNutritionInLiter());
+        assertEquals(1.5, palmTree.calculateDailyNutritionInLiter());
+    }
+
+    @Test
+    void testNutritionInstructions() {
+        assertEquals("Palm Tree Olof should get 1.50 liter of Tap Water per day",
+                palmTree.createNutritionInstructions());
     }
 }
