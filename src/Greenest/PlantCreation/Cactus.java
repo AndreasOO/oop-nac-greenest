@@ -13,17 +13,22 @@ public class Cactus extends Plant implements Nurtured, TableFormatable {
         return PLANT_TYPE.type;
     }
 
+
     @Override
     public String getNutrientType() {
         return NUTRITION_TYPE.nutrient;
     }
 
 
+    // Implemented interface method to calculate nutrition in liter units. This method is required by the other
+    // interface method that creates nutrition instructions.
     @Override
     public double calculateDailyNutritionInLiter() {
         return DAILY_NUTRITIONAL_VALUE_IN_LITER;
     }
 
+    // Implemented interface method to create nutrition instructions. This method and interface is required by
+    // the methods that print out nutrition instructions to the user, thus increasing type safety.
     @Override
     public String createNutritionInstructions() {
         return String.format(String.format("%s %s should get %.2f liter of %s per day",
@@ -33,6 +38,8 @@ public class Cactus extends Plant implements Nurtured, TableFormatable {
                 this.getNutrientType()));
     }
 
+    // Implemented interface method to create a string array. This method and interface is required by the method that
+    // populates the table with checked in plants, increasing type safety.
     @Override
     public String[] toTableArray() {
         return new String[]{

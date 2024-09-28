@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a630e4-62b9-4333-989a-c9a792ad5554" name="Changes" comment="Changed names of classes packages and variables to be more semantically correct to requirements">
-      <change beforePath="$PROJECT_DIR$/src/Greenest/Hotel/HotelOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/Hotel/HotelOwner.java" afterDir="false" />
+    <list default="true" id="60a630e4-62b9-4333-989a-c9a792ad5554" name="Changes" comment="Corrected variable name">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Cactus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Carnivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Carnivore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/PalmTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/PalmTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/PlantFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/PlantFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       <recent name="Greenest.GUI" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Greenest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Greenest.Hotel.Main" />
       <module name="Greenest" />
@@ -132,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Greenest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in Greenest" />
         <item itemvalue="JUnit.CactusTest" />
         <item itemvalue="JUnit.CarnivoreTest" />
         <item itemvalue="JUnit.PalmTreeTest" />
@@ -191,7 +192,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727526892549</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed enums to class variables because they are the same regardless of instance">
+      <option name="closed" value="true" />
+      <created>1727539308011</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727539308011</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Corrected variable name">
+      <option name="closed" value="true" />
+      <created>1727539393369</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727539393369</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +242,8 @@
     <MESSAGE value="Merged package reordering branch" />
     <MESSAGE value="Defined methods for PalmTree class, tests passed" />
     <MESSAGE value="Changed names of classes packages and variables to be more semantically correct to requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed names of classes packages and variables to be more semantically correct to requirements" />
+    <MESSAGE value="Changed enums to class variables because they are the same regardless of instance" />
+    <MESSAGE value="Corrected variable name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected variable name" />
   </component>
 </project>

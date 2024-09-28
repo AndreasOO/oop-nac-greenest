@@ -17,12 +17,14 @@ public class PalmTree extends Plant implements Nurtured, TableFormatable {
     public String getNutrientType() {
         return NUTRITION_TYPE.nutrient;
     }
-
+    // Implemented interface method to calculate nutrition in liter units. This method is required by the other
+    // interface method that creates nutrition instructions.
     @Override
     public double calculateDailyNutritionInLiter() {
         return NUTRITION_COEFFICIENT_IN_LITER_PER_METER*this.getHeightInMeter();
     }
-
+    // Implemented interface method to create nutrition instructions. This method and interface is required by
+    // the methods that print out nutrition instructions to the user, thus increasing type safety.
     @Override
     public String createNutritionInstructions() {
         return String.format(String.format("%s %s should get %.2f liter of %s per day",
@@ -31,7 +33,8 @@ public class PalmTree extends Plant implements Nurtured, TableFormatable {
                 this.calculateDailyNutritionInLiter(),
                 this.getNutrientType()));
     }
-
+    // Implemented interface method to create a string array. This method and interface is required by the method that
+    // populates the table with checked in plants, increasing type safety.
     @Override
     public String[] toTableArray() {
         return new String[]{
