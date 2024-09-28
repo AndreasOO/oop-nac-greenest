@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a630e4-62b9-4333-989a-c9a792ad5554" name="Changes" comment="Copied GUIObject from previous assignment and adjusted it. Also added interface for plants for adding plant to table method.">
+    <list default="true" id="60a630e4-62b9-4333-989a-c9a792ad5554" name="Changes" comment="Managed to figure out interface problems with casting. Unsure if it is best practice.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Cactus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Cactus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Carnivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Carnivore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Nurtured.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Nurtured.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/PalmTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/PalmTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Greenest/PlantCreation/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/PlantCreation/Plant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Greenest/Watering/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/Watering/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Greenest/Watering/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Greenest/Watering/Owner.java" afterDir="false" />
     </list>
@@ -161,7 +156,8 @@
       <updated>1727373492363</updated>
       <workItem from="1727373493412" duration="1000" />
       <workItem from="1727417546329" duration="1333000" />
-      <workItem from="1727459324315" duration="8317000" />
+      <workItem from="1727459324315" duration="8360000" />
+      <workItem from="1727514879472" duration="4830000" />
     </task>
     <task id="LOCAL-00001" summary="Set up testfolder and generated test for PalmTree, did not implement actual tests.">
       <option name="closed" value="true" />
@@ -195,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727434995484</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Managed to figure out interface problems with casting. Unsure if it is best practice.">
+      <option name="closed" value="true" />
+      <created>1727467701095</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727467701096</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +233,7 @@
     <MESSAGE value="Merged package reordering branch" />
     <MESSAGE value="Defined methods for PalmTree class, tests passed" />
     <MESSAGE value="Copied GUIObject from previous assignment and adjusted it. Also added interface for plants for adding plant to table method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Copied GUIObject from previous assignment and adjusted it. Also added interface for plants for adding plant to table method." />
+    <MESSAGE value="Managed to figure out interface problems with casting. Unsure if it is best practice." />
+    <option name="LAST_COMMIT_MESSAGE" value="Managed to figure out interface problems with casting. Unsure if it is best practice." />
   </component>
 </project>

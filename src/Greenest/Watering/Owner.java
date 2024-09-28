@@ -5,14 +5,15 @@ import Greenest.PlantCreation.*;
 import Greenest.GUI.*;
 
 import java.io.EOFException;
+import java.lang.instrument.IllegalClassFormatException;
 import java.util.List;
 
 public class Owner {
     private final GUIObject GUI;
-    private List<TableFormatable> plantsToLoadToTable;
-    private final String promptForGettingPlantNameFromUser = "Which plant should get nutrients?";
+    private List<Plant> plantsInGarden;
     private String inputPlantNameFromUser;
     private String plantWateringInstructions;
+    private Plant plantToWater;
 
 
     public Owner() {
@@ -21,8 +22,16 @@ public class Owner {
 
     public void runProgram() {
         GUI.init();
-        addPlantLoadToTable(plantsToLoadToTable);
+        setUpTable();
         addEventListeners();
+    }
+
+    private void setUpTable() {
+        try {
+            addPlantsInGardenToTable();
+        } catch (IllegalClassFormatException e) {
+            handleIllegalClassFormatException(e);
+        }
     }
 
     private void addEventListeners() {
@@ -37,20 +46,28 @@ public class Owner {
         try {
             getInputFromUser();
             validateInputFromUser();
+            findPlant();
+            createOutputToUser();
         } catch (EOFException e) {
             return;
         } catch (IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(GUI.getFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            handleIllegalArgumentException(e);
             return;
+        } catch (IllegalClassFormatException e) {
+            handleIllegalClassFormatException(e);
         }
-        createOutputToUser();
-        outputToUser();
+        showOutputToUser();
     }
 
+
+
     private void getInputFromUser() throws EOFException {
+        String promptForGettingPlantNameFromUser = "Which plant should get nutrients?";
+        String promptTitle = "Input plant name";
+
         inputPlantNameFromUser = JOptionPane.showInputDialog(GUI.getFrame(),
                                                              promptForGettingPlantNameFromUser,
-                                                        "Input plant name",
+                                                             promptTitle,
                                                              JOptionPane.QUESTION_MESSAGE);
         if (inputPlantNameFromUser == null) {
             throw new EOFException();
@@ -62,44 +79,57 @@ public class Owner {
             throw new EOFException();
         }
         if (inputPlantNameFromUser.isEmpty()) {
-            throw new IllegalArgumentException("Please input a plan name");
-        }
-        if (plantNameNotFound()) {
-            throw new IllegalArgumentException("Plant name does not match any registered plants");
+            throw new IllegalArgumentException("Please input a plant name");
         }
     }
 
-    private boolean plantNameNotFound() {
-        for (TableFormatable plant : plantsToLoadToTable) {
-            if (plant.toTableArray()[0].equalsIgnoreCase(inputPlantNameFromUser)) {
-                return false;
+    private void findPlant() throws IllegalArgumentException {
+        for (Plant plant : plantsInGarden) {
+            if (plant.getName().equalsIgnoreCase(inputPlantNameFromUser)) {
+                plantToWater = plant;
+                return;
             }
         }
-        return true;
+        throw new IllegalArgumentException("Plant name does not match any registered plants");
     }
 
-    private void createOutputToUser() {
-        for (TableFormatable plant : plantsToLoadToTable) {
-            if (plant.toTableArray()[0].equalsIgnoreCase(inputPlantNameFromUser)) {
-                Nurtured plant2 = (Nurtured) plant;
-                plantWateringInstructions = plant2.createNutritionInstructions();
-            }
+    private void createOutputToUser() throws IllegalClassFormatException{
+        if (plantToWater instanceof Nurtured nurtured) {
+            plantWateringInstructions = nurtured.createNutritionInstructions();
+        } else {
+            throw new IllegalClassFormatException("Plant cannot create nutrition instructions");
         }
     }
 
-    private void outputToUser() {
+    private void showOutputToUser() {
         JOptionPane.showMessageDialog(GUI.getFrame(), plantWateringInstructions);
     }
 
 
-    public void setPlantsToLoadToTable(List<TableFormatable> plantsToLoad) {
-        this.plantsToLoadToTable = plantsToLoad;
+    public void setPlantsInGarden(List<Plant> plantsInGarden) {
+        this.plantsInGarden = plantsInGarden;
     }
 
-
-    private void addPlantLoadToTable(List<TableFormatable> plantsToLoad) {
-        for (TableFormatable plant : plantsToLoad) {
-            GUI.getTableModel().addRow(plant.toTableArray());
+    private void addPlantsInGardenToTable() throws IllegalClassFormatException {
+        for (Plant plant : plantsInGarden) {
+            if (plant instanceof TableFormatable plantToTable) {
+                GUI.getTableModel().addRow(plantToTable.toTableArray());
+            }
+            else {
+                throw new IllegalClassFormatException("Plant cannot be formatted to table");
+            }
         }
+    }
+
+    private void handleIllegalClassFormatException(IllegalClassFormatException e) {
+        System.out.println(e.getMessage());
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(GUI.getFrame(), "Error - Unexpected error, closing application",
+                "Error", JOptionPane.ERROR_MESSAGE);
+        System.exit(0);
+    }
+
+    private void handleIllegalArgumentException(IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(GUI.getFrame(), e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
