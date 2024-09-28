@@ -2,24 +2,20 @@ package Greenest.PlantCreation;
 
 public class PalmTree extends Plant implements Nurtured, TableFormatable {
     private static final double NUTRITION_COEFFICIENT_IN_LITER_PER_METER = 0.5;
-
-    private final NutritionType nutritionType;
-    private final PlantType plantType;
+    private static final PlantType PLANT_TYPE =  PlantType.PALM_TREE;
+    private static final NutritionType NUTRITION_TYPE = NutritionType.TAP_WATER;
 
     protected PalmTree(String name, double heightInMeter) {
         super(name, heightInMeter);
-        this.plantType = PlantType.PALM_TREE;
-        this.nutritionType = NutritionType.TAP_WATER;
-
     }
 
     public String getPlantType() {
-        return plantType.type;
+        return PLANT_TYPE.type;
     }
 
     @Override
     public String getNutrientType() {
-        return nutritionType.nutrient;
+        return NUTRITION_TYPE.nutrient;
     }
 
     @Override

@@ -3,8 +3,8 @@ package Greenest.PlantCreation;
 
 /**
  * Static factory class for creating extended plant instances.
- * Constructors in extended classes are protected and cannot be accesses through the Owner. The Owner has to use
- * the factory class to get instances.
+ * Constructors in extended classes are protected and cannot be accessed outside package. Classes outside this package
+ * have to use the factory class static methods to get instances.
  */
 public class PlantFactory {
     public static PalmTree getPalmTree(String name, double heightInMeter) {

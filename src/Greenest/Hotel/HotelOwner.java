@@ -34,6 +34,19 @@ public class HotelOwner {
         }
     }
 
+    private void addPlantsInHotelToTable() throws NullPointerException,IllegalClassFormatException {
+        if (plantsInHotel == null) {
+            throw new NullPointerException("There are no plants to add to table");
+        }
+        for (Plant plant : plantsInHotel) {
+            if (plant instanceof TableFormatable plantToTable) {
+                GUI.getTableModel().addRow(plantToTable.toTableArray());
+            }
+            else {
+                throw new IllegalClassFormatException("Plant cannot be formatted to table");
+            }
+        }
+    }
 
     private void addEventListeners() {
         GUI.getOpenDialogButton().addActionListener(e -> {
@@ -84,6 +97,8 @@ public class HotelOwner {
         }
     }
 
+    // Example of polymorphism. All objects in plantsInHotel are extended classes from abstract Plant
+    // Because the generic type of the List is Plant each specific class can use the getName() method from the parent class.
     private void findPlantToNutriate() throws IllegalArgumentException {
         for (Plant plant : plantsInHotel) {
             if (plant.getName().equalsIgnoreCase(inputPlantNameFromUser)) {
@@ -109,21 +124,6 @@ public class HotelOwner {
 
     public void checkInPlantsToHotel(List<Plant> plantsToCheckInToHotel) {
         this.plantsInHotel = plantsToCheckInToHotel;
-    }
-
-
-    private void addPlantsInHotelToTable() throws IllegalClassFormatException {
-        if (plantsInHotel == null) {
-            throw new NullPointerException("There are no plants to add to table");
-        }
-        for (Plant plant : plantsInHotel) {
-            if (plant instanceof TableFormatable plantToTable) {
-                GUI.getTableModel().addRow(plantToTable.toTableArray());
-            }
-            else {
-                throw new IllegalClassFormatException("Plant cannot be formatted to table");
-            }
-        }
     }
 
     private void handleIncorrectSetup(Exception e) {

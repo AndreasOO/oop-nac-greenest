@@ -3,23 +3,20 @@ package Greenest.PlantCreation;
 public class Carnivore extends Plant implements Nurtured, TableFormatable {
     private static final double BASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER = 0.1;
     private static final double ADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER = 0.2;
-
-    private final NutritionType nutritionType;
-    private final PlantType plantType;
+    private static final PlantType PLANT_TYPE =  PlantType.CARNIVORE;
+    private static final NutritionType NUTRITION_TYPE = NutritionType.PROTEIN_DRINK;
 
     protected Carnivore(String name, double heightInMeter) {
         super(name, heightInMeter);
-        this.plantType = PlantType.CARNIVORE;
-        this.nutritionType = NutritionType.PROTEIN_DRINK;
     }
 
     public String getPlantType() {
-        return plantType.type;
+        return PLANT_TYPE.type;
     }
 
     @Override
     public String getNutrientType() {
-        return nutritionType.nutrient;
+        return NUTRITION_TYPE.nutrient;
     }
 
     @Override
