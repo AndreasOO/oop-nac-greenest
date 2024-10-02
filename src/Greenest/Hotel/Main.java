@@ -9,10 +9,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Cactus igge = PlantFactory.getCactus("Igge", 0.20);
-        PalmTree laura = PlantFactory.getPalmTree("Laura", 5);
-        Carnivore meatloaf = PlantFactory.getCarnivore("Meatloaf", 0.7);
-        PalmTree olof = PlantFactory.getPalmTree("Olof", 1);
+        Cactus igge = PlantFactory.getStandardCactus("Igge", 0.20);
+        PalmTree laura = PlantFactory.getStandardPalmTree("Laura", 5);
+        Carnivore meatloaf = PlantFactory.getStandardCarnivore("Meatloaf", 0.7);
+        PalmTree olof = PlantFactory.getStandardPalmTree("Olof", 1);
+        PalmTree henry = PlantFactory.getThirstyPalmTree("Törstiga Henry", 1);
+        Cactus kagge = PlantFactory.getThirstyCactus("Kagge", 0.5);
+        Carnivore jonas = PlantFactory.getHungryCarnivore("Jonas", 12);
+
 
 
         List<Plant> plantsToCheckInToHotel = new ArrayList<>();
@@ -20,6 +24,9 @@ public class Main {
         plantsToCheckInToHotel.add(laura);
         plantsToCheckInToHotel.add(meatloaf);
         plantsToCheckInToHotel.add(olof);
+        plantsToCheckInToHotel.add(henry);
+        plantsToCheckInToHotel.add(kagge);
+        plantsToCheckInToHotel.add(jonas);
 
         HotelOwner owner = new HotelOwner();
         owner.checkInPlantsToHotel(plantsToCheckInToHotel);

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class CarnivoreTest {
 
-    Carnivore carnivore = PlantFactory.getCarnivore("Meatloaf", 0.50);
+    Carnivore carnivore = PlantFactory.getStandardCarnivore("Meatloaf", 0.50);
 
 
     @Test

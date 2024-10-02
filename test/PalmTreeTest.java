@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class PalmTreeTest {
 
-    PalmTree palmTree = PlantFactory.getPalmTree("Olof", 3);
+    PalmTree palmTree = PlantFactory.getStandardPalmTree("Olof", 3);
 
 
     @Test

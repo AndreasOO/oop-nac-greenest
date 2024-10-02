@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 
 class CactusTest {
 
-    Cactus cactus1 = PlantFactory.getCactus("Igge", 5);
-    Cactus cactus2 = PlantFactory.getCactus("Sam", 25);
-    Cactus cactus3 = PlantFactory.getCactus("Ford", 6);
+    Cactus cactus1 = PlantFactory.getStandardCactus("Igge", 5);
+    Cactus cactus2 = PlantFactory.getStandardCactus("Sam", 25);
+    Cactus cactus3 = PlantFactory.getStandardCactus("Ford", 6);
 
 
     @Test

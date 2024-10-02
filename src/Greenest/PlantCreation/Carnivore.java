@@ -1,10 +1,10 @@
 package Greenest.PlantCreation;
 
 public class Carnivore extends Plant implements Nurtured, TableFormatable {
-    private static final double BASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER = 0.1;
-    private static final double ADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER = 0.2;
+    private double BASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER = 0.1;
+    private double ADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER = 0.2;
     private static final PlantType PLANT_TYPE =  PlantType.CARNIVORE;
-    private static final NutritionType NUTRITION_TYPE = NutritionType.PROTEIN_DRINK;
+    private NutritionType NUTRITION_TYPE = NutritionType.PROTEIN_DRINK;
 
     protected Carnivore(String name, double heightInMeter) {
         super(name, heightInMeter);
@@ -12,6 +12,19 @@ public class Carnivore extends Plant implements Nurtured, TableFormatable {
 
     public String getPlantType() {
         return PLANT_TYPE.type;
+    }
+
+
+    protected void setBASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER(double BASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER) {
+        this.BASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER = BASE_LEVEL_NUTRITIONAL_VALUE_IN_LITER;
+    }
+
+    protected void setADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER(double ADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER) {
+        this.ADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER = ADDITIONAL_NUTRITIONAL_VALUE_IN_LITER_PER_METER;
+    }
+
+    protected void setNUTRITION_TYPE(NutritionType NUTRITION_TYPE) {
+        this.NUTRITION_TYPE = NUTRITION_TYPE;
     }
 
     @Override
